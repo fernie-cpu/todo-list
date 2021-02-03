@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a7d8945663.js" crossorigin="anonymous"></script>
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <header>
+        <h1>sh#t to get done</h1>
+        <div class="toggle">
+            <input type="checkbox" name="toggle" class="checkbox" id="checkbox">
+            <label for="checkbox" class="label">
+                <div class="ball"></div>
+            </label>
+        </div>
+    </header>
+    
+    <div class="wrapper">
+    <div class="left-container">
+        <div class="header-left">
+            <h2 class="list-title">Lists</h2>
+        </div>
+        <ul class="list" data-list>
+            <li class="list-name active-list"></li>
+        </ul>
+            <form class="form-left" data-new-list-form>
+                <input type="text" name="new list" id="list-input" placeholder="create new list" data-new-list-input>
+                <button class="list-btn" title="Organize your tasks by adding a list">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </form>
+
+            <div class="delete-list">
+                <button class="delete-selected"><i class="fa fa-trash"></i>Delete selected list</button>
+                <button class="delete-selected" data-delete-task><i class="fa fa-trash"></i>Delete completed tasks</button>
+            </div>
+        </div>
+            
+        <div class="right-container" data-list-display-container>
+            <div class="header-right">
+                <h2 class="task-title" data-list-title></h2>
+            </div>
+            <div class="todo-body" >
+                <div class="tasks" data-tasks></div>
+            </div>
+        </div>
+        <button class="add-task" title="Add task...">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+        
+    <div class="modal">
+        <form class="modal-content">
+            <h2 class="modal-title">I have to...</h2>
+            <input type="text" name="new task"  id="task-input" placeholder="new task" data-task-input>
+            <input type="date" name="due date"  id="date-input">
+            <select name="priority" class="task-priority" id="priority">
+                <option value="regular">Regular</option>
+                <option value="important">Important</option>
+            </select>
+            <button class="task-btn">
+                <i class="fa fa-plus"></i>
+            </button>
+            <span class="close-modal" title="Close"><i class="fa fa-times"></i></span>
+        </form>
+    </div>
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox">    
+            <label></label>
+        </div>
+    </template>
+    <script src="main.js"></script>
+</body>
+</html>
