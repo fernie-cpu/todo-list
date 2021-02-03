@@ -99,14 +99,14 @@ function render() {
     clearElement(listsContainer)
     renderLists()
   
-    const selectedList = lists.find(list => list.id === selectedListId)
-    if (selectedListId == null) {
-      listDisplayContainer.style.display = 'none'
+    const selectedList = lists.find(list => list.id === selectedListId);
+    if (selectedList == null) {
+        listDisplayContainer.style.display = 'none'
     } else {
-      listDisplayContainer.style.display = ''
-      listTitleElement.innerText = selectedList.name
-      clearElement(tasksContainer)
-      renderTasks(selectedList)
+        listDisplayContainer.style.display = '';
+        listTitleElement.innerText = selectedList.name;
+        clearElement(taskContainer)
+        renderTasks(selectedList)
     }
 }
 
